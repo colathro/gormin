@@ -21,3 +21,8 @@ sudo apt install -y python3-rpi.gpio
 sudo raspi-config nonint do_i2c 0
 
 # python dependencies
+sudo pip3 install Adafruit-SSD1306
+
+# setup rc.local
+sudo mv rc.local /etc/rc.local
+echo moving rc.local to /etc/rc.local
