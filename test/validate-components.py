@@ -18,6 +18,7 @@ def getPositionData(gps):
         latitude = getattr(nx, 'lat', "Unknown")
         longitude = getattr(nx, 'lon', "Unknown")
         return (str(longitude), str(latitude))
+    return ("passing", "passing")
 
 
 RST = None
