@@ -37,4 +37,4 @@ while True:
     draw.text((x, top+16), "little",  font=font, fill=255)
     draw.text((x, top+25), "baka",  font=font, fill=255)
     disp.display()
-    time.sleep(.1)
+    time.sleep(.5)
