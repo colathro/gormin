@@ -22,6 +22,7 @@ sudo raspi-config nonint do_i2c 0
 
 # python dependencies
 sudo pip3 install Adafruit-SSD1306
+sudo pip3 install pyserial
 
 # setup rc.local
 sudo mv rc.local /etc/rc.local

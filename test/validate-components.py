@@ -31,25 +31,25 @@ def formatDegreesMinutes(coordinates, digits):
 
 def getPositionData(gps):
     data = gps.readline()
-    message = data[0:6]
-    if (message == "$GPRMC"):
-        # GPRMC = Recommended minimum specific GPS/Transit data
-        # Reading the GPS fix data is an alternative approach that also works
-        parts = data.split(",")
-        if parts[2] == 'V':
-            # V = Warning, most likely, there are no satellites in view...
-            return ("syncing", "syncing")
+    while True:
+        message = data[0:6]
+        if (message == "$GPRMC"):
+            # GPRMC = Recommended minimum specific GPS/Transit data
+            # Reading the GPS fix data is an alternative approach that also works
+            parts = data.split(",")
+            if parts[2] == 'V':
+                # V = Warning, most likely, there are no satellites in view...
+                return ("syncing", "syncing")
+            else:
+                # Get the position data that was transmitted with the GPRMC message
+                # In this example, I'm only interested in the longitude and latitude
+                # for other values, that can be read, refer to: http://aprs.gids.nl/nmea/#rmc
+                longitude = formatDegreesMinutes(parts[5], 3)
+                latitude = formatDegreesMinutes(parts[3], 2)
+                return (str(latitude), str(longitude))
         else:
-            # Get the position data that was transmitted with the GPRMC message
-            # In this example, I'm only interested in the longitude and latitude
-            # for other values, that can be read, refer to: http://aprs.gids.nl/nmea/#rmc
-            longitude = formatDegreesMinutes(parts[5], 3)
-            latitude = formatDegreesMinutes(parts[3], 2)
-            return (str(latitude), str(longitude))
-    else:
-        # Handle other NMEA messages and unsupported strings
-        pass
-    return ("pass data", "pass data")
+            # Handle other NMEA messages and unsupported strings
+            pass
 
 
 RST = None
