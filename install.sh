@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # system setup
 raspi-config nonint do_hostname gormin
 
@@ -17,3 +19,4 @@ apt install -y python3-rpi.gpio
 
 # screen settings
 raspi-config nonint do_i2c 1
+
