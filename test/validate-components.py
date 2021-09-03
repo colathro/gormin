@@ -31,10 +31,12 @@ font = ImageFont.load_default()
 
 while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    disp.image(image)
+
     draw.text((x, top), "you are",  font=font, fill=255)
     draw.text((x, top+8), "a sussy", font=font, fill=255)
     draw.text((x, top+16), "little",  font=font, fill=255)
     draw.text((x, top+25), "baka",  font=font, fill=255)
+
+    disp.image(image)
     disp.display()
     time.sleep(.5)
