@@ -1,9 +1,15 @@
 from gps import *
+import os
 
 
 class Location:
     def __init__(self):
         self.gpsd = gps(mode=WATCH_ENABLE | WATCH_NEWSTYLE)
+        self.repair_socket()
+
+    def repair_socket(self):
+        os.system("sudo systemctl stop gpsd.socket")
+        os.system("sudo gpsd /dev/serial0 -F /var/run/gpsd.sock")
 
     def get_latitude_longitude(self):
         while (True):

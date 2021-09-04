@@ -14,7 +14,4 @@
 exec 2> /tmp/rc.local.log      # send stderr from rc.local to a log file
 exec 1>&2                      # send stdout to the same log file
 
-sudo systemctl stop gpsd.socket
-sudo gpsd /dev/serial0 -F /var/run/gpsd.sock
-
 exit 0
