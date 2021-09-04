@@ -12,18 +12,20 @@ class Screen:
 
     def __init__(self):
         self.disp = Adafruit_SSD1306.SSD1306_128_32(rst=None)
-        disp.begin()
-        disp.clear()
-        disp.display()
+        self.disp.begin()
+        self.disp.clear()
+        self.disp.display()
 
-        self.image = Image.new('1', (disp.width, disp.height))
+        self.image = Image.new('1', (self.disp.width, self.disp.height))
         self.draw = ImageDraw.Draw(image)
-        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        self.draw.rectangle(
+            (0, 0, self.disp.width, self.disp.height), outline=0, fill=0)
 
         self.font = ImageFont.load_default()
 
     def render(self, line1, line2, line3, line4):
-        self.draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        self.draw.rectangle(
+            (0, 0, self.disp.width, self.disp.height), outline=0, fill=0)
 
         self.draw.text((x, top), line1,  font=font, fill=255)
         self.draw.text((x, top+8), line2, font=font, fill=255)
