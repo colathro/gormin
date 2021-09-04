@@ -11,9 +11,7 @@ class Screen:
     top = padding
 
     def __init__(self):
-        self.RST = None
-
-        self.disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
+        self.disp = Adafruit_SSD1306.SSD1306_128_32(rst=None)
         disp.begin()
         disp.clear()
         disp.display()
