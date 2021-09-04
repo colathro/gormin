@@ -27,10 +27,10 @@ class Screen:
         self.draw.rectangle(
             (0, 0, self.disp.width, self.disp.height), outline=0, fill=0)
 
-        self.draw.text((0, self.top), line1,  font=font, fill=255)
-        self.draw.text((0, self.top+8), line2, font=font, fill=255)
-        self.draw.text((0, self.top+16), line3,  font=font, fill=255)
-        self.draw.text((0, self.top+25), line4,  font=font, fill=255)
+        self.draw.text((0, self.top), line1,  font=self.font, fill=255)
+        self.draw.text((0, self.top+8), line2, font=self.font, fill=255)
+        self.draw.text((0, self.top+16), line3,  font=self.font, fill=255)
+        self.draw.text((0, self.top+25), line4,  font=self.font, fill=255)
 
         self.disp.image(self.image)
         self.disp.display()
