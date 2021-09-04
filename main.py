@@ -12,5 +12,5 @@ if __name__ == "__main__":
         data = l.get_latitude_longitude()
         s.render("Gormin G420", "la:" + data[0], "lon:" + data[1], "Running")
         with open("data.csv", "a") as f:
-            f.write(f"{datetime.datetime.now()},{data[0]},{data[1]}")
+            f.write(f"{datetime.datetime.now()},{data[0]},{data[1]}\n\r")
         time.sleep(1)
