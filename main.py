@@ -20,6 +20,7 @@ class State:
     def await_pause(self):
         while True:
             self.button.wait_for_press()
+            print("ye")
             self.running = not self.running
 
 
