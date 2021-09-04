@@ -17,7 +17,7 @@ class Screen:
         self.disp.display()
 
         self.image = Image.new('1', (self.disp.width, self.disp.height))
-        self.draw = ImageDraw.Draw(image)
+        self.draw = ImageDraw.Draw(self.image)
         self.draw.rectangle(
             (0, 0, self.disp.width, self.disp.height), outline=0, fill=0)
 
@@ -32,5 +32,5 @@ class Screen:
         self.draw.text((x, top+16), line3,  font=font, fill=255)
         self.draw.text((x, top+25), line4,  font=font, fill=255)
 
-        self.disp.image(image)
+        self.disp.image(self.image)
         self.disp.display()
