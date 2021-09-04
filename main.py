@@ -22,6 +22,7 @@ class State:
             self.button.wait_for_press()
             print("ye")
             self.running = not self.running
+            time.sleep(.5)
 
 
 if __name__ == "__main__":
