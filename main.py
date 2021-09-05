@@ -21,7 +21,7 @@ class State:
         while True:
             self.button.wait_for_press()
             print("ye")
-            self.running = not self.running
+            # self.running = not self.running
             time.sleep(.5)
 
 
