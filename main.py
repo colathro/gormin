@@ -10,7 +10,7 @@ from gpiozero import Button
 class State:
 
     def __init__(self):
-        self.running = False
+        self.running = True
         self.data = ("Unknown", "Unknown")
         self.button = Button(17)
         thread = threading.Thread(target=self.await_pause, args=())
